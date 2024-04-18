@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container">
+        <h1>Editing</h1>
+        <form action="/edit/<%= post.id %>" method="POST">
+            <%- include("partials/form.ejs") %>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Update" />
+            </div>
+        </form>
+    </div>
+
+<%- include("partials/footer.ejs") %>

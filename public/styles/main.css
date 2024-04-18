@@ -1,0 +1,34 @@
+#main-carousel img {
+    object-fit: cover;
+    height: 100vh;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-hover-light:hover {
+    color:white;
+}
+
+.anchor-to-show {
+    text-decoration: none;
+    color: black;
+}
+
+.anchor-to-show:hover {
+    text-decoration: underline;
+    color: gray;
+}
+
+.fixed-top {
+    position:fixed;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+#carousel-div {
+    background-color: rgb(91, 94, 94);
+}

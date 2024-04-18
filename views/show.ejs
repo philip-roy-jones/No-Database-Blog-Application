@@ -1,0 +1,8 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+    <h2><%= post.title %></h2>
+    <p><%= post.body %></p>
+
+    <a href="/edit?id=<%= post.id %>" class="btn btn-light btn-outline-dark"><span>Edit</span></a>
+</div>
+<%- include("partials/footer.ejs") %>

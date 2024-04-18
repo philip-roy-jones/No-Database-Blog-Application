@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+  <% if (successMessage) { %>
+  <div id="successAlert" class="alert <%= successMessageColor %> fixed-top mx-auto col-md-4 text-center mt-3" role="alert">
+    <%= successMessage %>
+  </div>
+  <% } %>
+  <a href="/new" class="btn btn-light btn-outline-dark">New</a>
+  <% if (post_index.length > 0) { 
+    post_index.slice().reverse().forEach(function(post, index, post_index) { %>
+    <div id="<%= index %>" class="card mt-3 col-md-6" style="height: 10rem">
+      <div class="card-body">
+        <h5 class="card-title truncate">
+          <a href="/show?id=<%= post.id %>" class="anchor-to-show"><%= post['title'] %></a>
+      </h5>
+      <p class="card-text truncate"><%= post['body'] %></p>
+      <form action="/delete" method="POST" class="delete-form">
+        <input type="hidden" name="postId" value="<%= post.id %>" />
+        <button
+          type="submit"
+          class="btn btn-light btn-outline-danger btn-hover-light"
+        >
+          <span class="text-danger">Delete</span>
+        </button>
+      </form>
+    </div>
+  </div>
+  <% }) %> <% } else { %>
+  <h5 class="mt-3">There are no posts</h5>
+  <% } %>
+<%- include("partials/footer.ejs") %>
+
+<script>
+  // Function to hide the success alert after 10 seconds
+  setTimeout(function () {
+    var successAlert = document.getElementById("successAlert");
+    if (successAlert) {
+      successAlert.style.display = "none";
+    }
+  }, 5000); // 5 seconds
+</script>
+</div>

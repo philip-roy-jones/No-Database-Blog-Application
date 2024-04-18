@@ -1,0 +1,11 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+  <h1>New Post</h1>
+  <form action="/submit" method="POST">
+    <%- include("partials/form.ejs", {post: post}) %>
+    <div class="mb-3">
+      <input class="btn btn-primary" type="submit" value="Submit" />
+    </div>
+  </form>
+</div>
+<%- include("partials/footer.ejs") %>
